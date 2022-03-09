@@ -2,16 +2,23 @@ import 'person.dart';
 
 class Dosen extends Pegawai {
   int JumSks = 0;
-  int TKehadiran = 0;
 
-  Dosen(String? Nama, String? NIP, int JumSks, int TKehadiran)
-      : super(Nama, NIP) {
+  Dosen(String? Nama, String? NIP, int JumSks) : super(Nama, NIP) {
     this.JumSks = JumSks;
-    this.TKehadiran = TKehadiran;
   }
 }
 
-class DosenTetap extends Dosen {
+class DosenTamu extends Dosen {
+  int TKehadiran = 0;
+  DosenTamu(String? Nama, String? NIP, int JumSks, int TKehadiran)
+      : super(Nama, NIP, JumSks) {
+    this.TKehadiran = TKehadiran;
+  }
+
+  int get tkehadiran => this.TKehadiran;
+}
+
+class DosenTetap extends DosenTamu {
   int GajiDasar = 0;
 
   DosenTetap(
@@ -23,7 +30,8 @@ class DosenTetap extends Dosen {
   int get gajidasar => this.GajiDasar;
 }
 
-class DosenTamu extends Dosen {
-  DosenTamu(String? Nama, String? NIP, int JumSks, int TKehadiran)
-      : super(Nama, NIP, JumSks, TKehadiran);
+class coba extends DosenTetap {
+  int ada = 0;
+  coba(String? Nama, String? NIP, int JumSks, int TKehadiran, int GajiDasar)
+      : super(Nama, NIP, JumSks, TKehadiran, GajiDasar);
 }
