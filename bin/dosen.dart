@@ -6,6 +6,8 @@ class Dosen extends Pegawai {
   Dosen(String? Nama, String? NIP, int JumSks) : super(Nama, NIP) {
     this.JumSks = JumSks;
   }
+
+  int get jumsks => this.JumSks;
 }
 
 class DosenTamu extends Dosen {
@@ -28,10 +30,4 @@ class DosenTetap extends DosenTamu {
   }
 
   int get gajidasar => this.GajiDasar;
-}
-
-class coba extends DosenTetap {
-  int ada = 0;
-  coba(String? Nama, String? NIP, int JumSks, int TKehadiran, int GajiDasar)
-      : super(Nama, NIP, JumSks, TKehadiran, GajiDasar);
 }
