@@ -1,7 +1,7 @@
 import 'function.dart';
 import 'person.dart';
 
-class Dosen extends Pegawai with DsnLbAbsensi, LihatPenghasilan, DsnLbJumSks {
+class Dosen extends Pegawai with DsnLbAbsensi, DsnLbLihatPenghasilan, DsnLbJumSks {
   int JumSks = 0;
 
   Dosen(String? Nama, String? NIP, int Absensi, int JumSks) : super(Nama, NIP, Absensi) {
@@ -11,7 +11,7 @@ class Dosen extends Pegawai with DsnLbAbsensi, LihatPenghasilan, DsnLbJumSks {
   int get jumsks => this.JumSks;
 }
 
-class DosenTamu extends Dosen with DsnTamuAbsensi, LihatPenghasilan, DsnTamuJumSks {
+class DosenTamu extends Dosen with DsnTamuAbsensi, DsnTamuLihatPenghasilan, DsnTamuJumSks {
   int TKehadiran = 0;
   DosenTamu(String? Nama, String? NIP, int Absensi, int JumSks, int TKehadiran)
       : super(Nama, NIP, Absensi, JumSks) {
@@ -21,7 +21,7 @@ class DosenTamu extends Dosen with DsnTamuAbsensi, LihatPenghasilan, DsnTamuJumS
   int get tkehadiran => this.TKehadiran;
 }
 
-class DosenTetap extends DosenTamu with DsnTtpAbsensi, LihatPenghasilan, DsnTtpJumSks {
+class DosenTetap extends DosenTamu with DsnTtpAbsensi, DsnTtpLihatPenghasilan, DsnTtpJumSks {
   int GajiDasar = 0;
 
   DosenTetap(

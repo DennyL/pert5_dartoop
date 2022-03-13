@@ -1,11 +1,32 @@
 import 'dosen.dart';
 import 'mahasiswa.dart';
 import 'dart:io';
+import 'staf.dart';
 
 //Function Pegawai
-mixin LihatPenghasilan {
-  int lhatpenghasilan(int jumsks, int absensi, int tunjangan) {
-    return jumsks * 40000;
+mixin DsnLbLihatPenghasilan {
+  int dsnlblihatpenghasilan(Dosen nama) {
+    return (nama.jumsks * 40000);
+  }
+}
+
+mixin DsnTamuLihatPenghasilan {
+  int dsntamulihatpenghasilan(DosenTamu nama) {
+    return (nama.jumsks * 40000) + (nama.TKehadiran * nama.absensi);
+  }
+}
+
+mixin DsnTtpLihatPenghasilan {
+  int dsnttplihatpenghasilan(DosenTetap nama) {
+    return (nama.jumsks * 40000) +
+        (nama.TKehadiran * nama.absensi) +
+        nama.GajiDasar;
+  }
+}
+
+mixin StaffLihatPenghasilan {
+  int stafflihatpenghasilan(Staf nama) {
+    return (nama.absensi * nama.TKehadiran) + nama.GajiDasar;
   }
 }
 

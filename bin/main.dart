@@ -4,6 +4,7 @@ import 'mahasiswa.dart';
 
 void main() {
   //Mahasiswa
+
   var mhs1 = Mhs('Denny', 'C14190004', 'Aktif', 0.0, 0.0, 0, 6);
   mhs1.ambilsks(mhs1, 1);
   print("Jumlah Sks Punya ${mhs1.nama} adalah ${mhs1.Sks}");
@@ -14,14 +15,14 @@ void main() {
 
   //Dosen LB
   var dsnlb1 = Dosen('Yayan', '141842', 0, 0);
+  print(dsnlb1.dsnlblihatpenghasilan(dsnlb1));
 
   //Dosen Tamu
   var dsntamu1 = DosenTamu('Bruno', '181902', 0, 0, 2500);
 
   //Dosen Tetap
   var dsnttp1 = DosenTetap('Agus', '160123', 0, 0, 5000, 3500000);
-  
-  //Staff
-  var staf1 = Staf('Umar', '121212', 0, 12, 2500);
 
+  //Staff
+  var staf1 = Staf('Udin', '13141', 12, 12, 2500, 1500000);
 }
