@@ -15,7 +15,6 @@ class Mahasiswa extends Person {
   double _Ipk = 0.0;
   double _Ips = 0.0;
 
-
   Mahasiswa(String? Nama, this._NRP, this._Status, this._Ipk, this._Ips)
       : super(Nama);
 
@@ -43,12 +42,19 @@ class Mahasiswa extends Person {
 
 class Pegawai extends Person {
   String? _NIP;
+  int _Absensi;
 
-  Pegawai(String? Nama, this._NIP) : super(Nama);
+  Pegawai(String? Nama, this._NIP, this._Absensi) : super(Nama);
 
   set nip(String dtNip) {
     _NIP = dtNip;
   }
 
+  set absensi(int dtAbsensi) {
+    _Absensi = dtAbsensi;
+  }
+
   String get nip => this._NIP!;
+
+  int get absensi => this._Absensi;
 }

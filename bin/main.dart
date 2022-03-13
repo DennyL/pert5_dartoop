@@ -13,14 +13,15 @@ void main() {
   // print(mhs2.lihatipk(mhs2));
 
   //Dosen LB
-  var dsnlb1 = Dosen('Yayan', '141842', 0);
+  var dsnlb1 = Dosen('Yayan', '141842', 0, 0);
 
   //Dosen Tamu
-  var dsntamu1 = DosenTamu('Bruno', '181902', 0, 0);
+  var dsntamu1 = DosenTamu('Bruno', '181902', 0, 0, 2500);
 
   //Dosen Tetap
-  var dsnttp1 = DosenTetap('Agus', '160123', 0, 0, 0);
-
+  var dsnttp1 = DosenTetap('Agus', '160123', 0, 0, 5000, 3500000);
+  
   //Staff
-  var staf1 = Staf('Umar', '121212', 0, 12, 0);
+  var staf1 = Staf('Umar', '121212', 0, 12, 2500);
+
 }
