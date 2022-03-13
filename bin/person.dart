@@ -15,6 +15,7 @@ class Mahasiswa extends Person {
   double _Ipk = 0.0;
   double _Ips = 0.0;
 
+
   Mahasiswa(String? Nama, this._NRP, this._Status, this._Ipk, this._Ips)
       : super(Nama);
 

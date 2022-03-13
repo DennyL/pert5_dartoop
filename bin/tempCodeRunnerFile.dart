@@ -1,0 +1,1 @@
+  // print(mhs2.lihatipk(mhs2));
