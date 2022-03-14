@@ -19,19 +19,25 @@ void main() {
 
   //Dosen LB
   var dsnlb1 = Dosen('Yayan', '141842', 0, 0);
+  dsnlb1.dnslbjumsks(dsnlb1, 42);
   print(dsnlb1.dsnlblihatpenghasilan(dsnlb1));
 
   //Dosen Tamu
   var dsntamu1 = DosenTamu('Bruno', '181902', 0, 0, 2500);
+  dsntamu1.dsntamuabsensi(dsntamu1);
+  dsntamu1.dnstamujumsks(dsntamu1, 43);
+  print(dsntamu1.dsntamulihatpenghasilan(dsntamu1));
 
   //Dosen Tetap
   var dsnttp1 = DosenTetap('Agus', '160123', 0, 0, 5000, 3500000);
+  dsnttp1.dsnttpabsensi(dsnttp1);
+  dsnttp1.dnsttpjumsks(dsnttp1, 43);
+  print(dsnttp1.dsnttplihatpenghasilan(dsnttp1));
 
   //Staff
   var staf1 = Staf('Udin', '13141', 0, 12, 2500, 1500000);
-  // staf1.staffbabsensi(staf1);
-  // staf1.staffambilcuti(staf1);
+  staf1.staffbabsensi(staf1);
+  staf1.staffambilcuti(staf1);
   print(
       "Staf ${staf1.nama} memiliki penghasilan sebesar ${staf1.stafflihatpenghasilan(staf1)} dan batas Cuti tersisa ${staf1.batascuti} dan Kehadiran sebanyak ${staf1.absensi}");
-  
 }

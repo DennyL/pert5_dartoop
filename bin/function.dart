@@ -10,6 +10,9 @@ extension StringExtension on String {
   }
 }
 
+//Function Pegawai
+
+
 //Function Staff
 mixin StaffLihatPenghasilan {
   int stafflihatpenghasilan(Staf nama) {
@@ -32,7 +35,7 @@ mixin StaffAbsensi {
 
 //Function Dosen LB
 mixin DsnLbAbsensi {
-  void ddsnlbabsensi(Dosen nama) {
+  void dsnlbabsensi(Dosen nama) {
     nama.absensi++;
     print("Absen Berhasil");
   }

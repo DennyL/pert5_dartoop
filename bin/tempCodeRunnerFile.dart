@@ -1,1 +1,1 @@
-  // print(mhs2.lihatipk(mhs2));
+  dsnttp1.dnsttpjumsks(dsnttp1, 43);
