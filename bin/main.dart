@@ -15,7 +15,7 @@ void main() {
   mhs2.ubahstatus(mhs2, "aktif");
   print(
       "Jumlah Sks Punya ${mhs2.nama} adalah ${mhs2.Sks} dengan Status ${mhs2.status}");
-  // print(mhs2.lihatipk(mhs2));
+  print(mhs2.lihatipk(mhs2));
 
   print("--------------------------------------- \n");
 

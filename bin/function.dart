@@ -12,7 +12,6 @@ extension StringExtension on String {
 
 //Function Pegawai
 
-
 //Function Staff
 mixin StaffLihatPenghasilan {
   int stafflihatpenghasilan(Staf nama) {
@@ -23,6 +22,10 @@ mixin StaffLihatPenghasilan {
 mixin StaffAmbilCuti {
   void staffambilcuti(Staf nama) {
     nama.BatasCuti--;
+    if (nama.BatasCuti < 0) {
+      print("Batas cuti telah habis :)");
+      nama.BatasCuti = 0;
+    }
   }
 }
 
@@ -122,7 +125,12 @@ mixin InputIps {
     for (int i = 0; i < nama.semester; i++) {
       print("Input ke- ${i + 1}");
       double input = double.parse(stdin.readLineSync()!);
-      nama.ips += input;
+      if (input < 0.0 || input > 4.0) {
+        print("IPS yang dimasukkan tidadk sesuai");
+        i--;
+      } else {
+        nama.ips += input;
+      }
     }
   }
 }
