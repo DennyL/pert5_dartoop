@@ -1,6 +1,7 @@
+import 'function.dart';
 import 'person.dart';
 
-class Staf extends Pegawai {
+class Staf extends Pegawai with StaffLihatPenghasilan, StaffAmbilCuti, StaffAbsensi {
   int BatasCuti = 12;
   int TKehadiran = 0;
   int GajiDasar = 0;

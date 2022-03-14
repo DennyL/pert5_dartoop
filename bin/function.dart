@@ -3,30 +3,30 @@ import 'mahasiswa.dart';
 import 'dart:io';
 import 'staf.dart';
 
-//Function Pegawai
-mixin DsnLbLihatPenghasilan {
-  int dsnlblihatpenghasilan(Dosen nama) {
-    return (nama.jumsks * 40000);
+//String Extension
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
   }
 }
 
-mixin DsnTamuLihatPenghasilan {
-  int dsntamulihatpenghasilan(DosenTamu nama) {
-    return (nama.jumsks * 40000) + (nama.TKehadiran * nama.absensi);
-  }
-}
-
-mixin DsnTtpLihatPenghasilan {
-  int dsnttplihatpenghasilan(DosenTetap nama) {
-    return (nama.jumsks * 40000) +
-        (nama.TKehadiran * nama.absensi) +
-        nama.GajiDasar;
-  }
-}
-
+//Function Staff
 mixin StaffLihatPenghasilan {
   int stafflihatpenghasilan(Staf nama) {
     return (nama.absensi * nama.TKehadiran) + nama.GajiDasar;
+  }
+}
+
+mixin StaffAmbilCuti {
+  void staffambilcuti(Staf nama) {
+    nama.BatasCuti--;
+  }
+}
+
+mixin StaffAbsensi {
+  void staffbabsensi(Staf nama) {
+    nama.absensi++;
+    print("Absen Berhasil");
   }
 }
 
@@ -44,6 +44,12 @@ mixin DsnLbJumSks {
   }
 }
 
+mixin DsnLbLihatPenghasilan {
+  int dsnlblihatpenghasilan(Dosen nama) {
+    return (nama.jumsks * 40000);
+  }
+}
+
 //Function Dosen Tamu
 mixin DsnTamuAbsensi {
   void dsntamuabsensi(DosenTamu nama) {
@@ -55,6 +61,12 @@ mixin DsnTamuAbsensi {
 mixin DsnTamuJumSks {
   void dnstamujumsks(Dosen nama, int jum) {
     nama.JumSks = jum;
+  }
+}
+
+mixin DsnTamuLihatPenghasilan {
+  int dsntamulihatpenghasilan(DosenTamu nama) {
+    return (nama.jumsks * 40000) + (nama.TKehadiran * nama.absensi);
   }
 }
 
@@ -72,6 +84,14 @@ mixin DsnTtpJumSks {
   }
 }
 
+mixin DsnTtpLihatPenghasilan {
+  int dsnttplihatpenghasilan(DosenTetap nama) {
+    return (nama.jumsks * 40000) +
+        (nama.TKehadiran * nama.absensi) +
+        nama.GajiDasar;
+  }
+}
+
 //Function Mahasiswa
 mixin AmbilSks {
   void ambilsks(Mhs nama, int jum) {
@@ -85,13 +105,11 @@ mixin AmbilSks {
 
 mixin UbahStatus {
   void ubahstatus(Mhs nama, String status) {
-    if (status != "aktif" ||
-        status != "Aktif" ||
-        status != "Cuti" ||
-        status != "cuti") {
-      print("Status yang dimasukkan harus Aktif/Cuti atau aktif/cuti");
+    String temp = status.capitalize().trim();
+    if (temp == "Cuti" || temp == "Aktif") {
+      nama.status = temp;
     } else {
-      nama.status = status;
+      print("Status yang ddiinputkan salah");
     }
   }
 }
